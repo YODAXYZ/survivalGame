@@ -33,7 +33,7 @@ public class MainMenuScreen implements Screen {
             stage.addActor(table);
 
             // temporary until we have asset manager in
-            Skin skin = new Skin(Gdx.files.internal("skin/glassy-ui.json"));
+            Skin skin = new Skin(Gdx.files.internal("skin/craftacular-ui.json"));
 
             //create buttons
             TextButton newGame = new TextButton("New Game", skin);
