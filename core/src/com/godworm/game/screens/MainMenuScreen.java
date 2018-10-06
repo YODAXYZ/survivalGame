@@ -9,6 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.godworm.game.Main;
 
@@ -20,7 +21,7 @@ public class MainMenuScreen implements Screen {
             parent = box2dTutorial;
 
             /// create stage and set it as input processor
-            stage = new Stage(new ScreenViewport());
+            stage = new Stage(new ExtendViewport(640,480));
             Gdx.input.setInputProcessor(stage);
         }
 
