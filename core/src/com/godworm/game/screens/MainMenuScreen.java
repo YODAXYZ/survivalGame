@@ -12,11 +12,11 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.godworm.game.Main;
 
-public class StartingUI implements Screen {
+public class MainMenuScreen implements Screen {
         private Main parent;
         private Stage stage;
 
-        public StartingUI(Main box2dTutorial){
+        public MainMenuScreen(Main box2dTutorial){
             parent = box2dTutorial;
 
             /// create stage and set it as input processor
