@@ -51,7 +51,7 @@ public class StartingMenuScreen extends MainScreen {
         newGame.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                //    parent.changeScreen(Main.APPLICATION);
+                main.setScreen(new PrototypeScreen(main));
             }
         });
 
