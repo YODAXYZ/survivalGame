@@ -9,10 +9,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.godworm.game.Main;
 
-public class MainMenuScreen extends MainScreen {
+public class StartingMenuScreen extends MainScreen {
 
 
-    public MainMenuScreen(Main main) {
+    public StartingMenuScreen(Main main) {
         super(main);
     }
 
