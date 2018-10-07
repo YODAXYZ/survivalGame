@@ -1,40 +1,26 @@
 package com.godworm.game.screens;
 
-import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.godworm.game.Main;
 
-public class LoadingScreen implements Screen {
+public class LoadingScreen extends MainScreen {
+
+    public LoadingScreen(Main main) {
+        super(main);
+    }
+
     @Override
     public void show() {
-        // TODO Auto-generated method stub
+        super.show();
+        Table table = new Table();
+        table.setFillParent(true);
+        table.setDebug(true);
+        stage.addActor(table);
     }
 
     @Override
     public void render(float delta) {
-        // TODO Auto-generated method stub
+        super.render(delta);
     }
 
-    @Override
-    public void resize(int width, int height) {
-        // TODO Auto-generated method stub
-    }
-
-    @Override
-    public void pause() {
-        // TODO Auto-generated method stub
-    }
-
-    @Override
-    public void resume() {
-        // TODO Auto-generated method stub
-    }
-
-    @Override
-    public void hide() {
-        // TODO Auto-generated method stub
-    }
-
-    @Override
-    public void dispose() {
-        // TODO Auto-generated method stub
-    }
 }
