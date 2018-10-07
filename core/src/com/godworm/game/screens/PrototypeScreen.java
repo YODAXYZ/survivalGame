@@ -58,20 +58,9 @@ public class PrototypeScreen extends MainScreen {
         shapeRenderer.setTransformMatrix(stage.getBatch().getTransformMatrix());
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.setColor(Color.BROWN);
-        shapeRenderer.rect(0, 0, room.width * 41, room.height * 41);
+        float width = 640.0f/room.width;
+        shapeRenderer.rect(0, 0, room.width * width, room.height * width);
 
-        for (int x = level.minX; x <= level.maxX; x++) {
-            for (int y = level.minY; y <= level.maxY; y++) {
-                if (level.rooms[x][y] == null)
-                    continue;
-                shapeRenderer.setColor(1, 1, 1, 0.5f);
-
-                if (level.rooms[x][y] == room)
-                    shapeRenderer.setColor(1, 1, 0, 0.5f);
-
-                shapeRenderer.rect((x - level.minX) * 20, room.height * 41 + (y - level.minY) * 20, 20, 20);
-            }
-        }
 
         for (int x = 0; x < room.width; x++) {
             for (int y = 0; y < room.height; y++) {
@@ -83,9 +72,23 @@ public class PrototypeScreen extends MainScreen {
                     shapeRenderer.setColor(Color.GRAY);
                 if (room.entities[x][y] instanceof DummyDoor)
                     shapeRenderer.setColor(Color.YELLOW);
-                shapeRenderer.rect(x * 41, y * 41, 41, 41);
+                shapeRenderer.rect(x * width, y * width, width, width);
             }
         }
+
+        for (int x = level.minX; x <= level.maxX; x++) {
+            for (int y = level.minY; y <= level.maxY; y++) {
+                if (level.rooms[x][y] == null)
+                    continue;
+                shapeRenderer.setColor(1, 1, 1, 0.5f);
+
+                if (level.rooms[x][y] == room)
+                    shapeRenderer.setColor(1, 1, 0, 0.5f);
+
+                shapeRenderer.rect((x - level.minX) * 20, room.height * width + (y - level.minY) * 20-(level.maxY-level.minY+1)*20, 20, 20);
+            }
+        }
+
 
         shapeRenderer.end();
     }
